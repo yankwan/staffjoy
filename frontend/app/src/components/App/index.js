@@ -58,7 +58,7 @@ App.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     companyId: ownProps.routeParams.companyId,
-    intercomSettings: state.whoami.intercomSettings,
+    // intercomSettings: state.whoami.intercomSettings,
   };
 }
 
