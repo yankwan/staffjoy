@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var hash = Date.now();
 var bundleName = "bundle-" + hash + ".js";
-
+var webpack = require('webpack');
 // for cleaning up old files upon building
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
@@ -102,6 +102,9 @@ module.exports = {
         }),
         new WebpackCleanupPlugin({
             exclude: ["README.md", "assets/**/*"],
+        }),
+        new webpack.ProvidePlugin({
+            $: 'zepto-webpack'
         })
     ]
 };

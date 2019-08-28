@@ -1,9 +1,9 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Layout, Content } from 'react-mdl';
 import NavigationSide from 'components/SideNavigation';
-import Intercom from 'components/Intercom';
+// import Intercom from 'components/Intercom';
 import * as actions from 'actions';
 
 require('./app.scss');
@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { children, companyId, intercomSettings } = this.props;
+    const { children, companyId } = this.props;
 
     return (
       <Layout fixedDrawer>
@@ -37,12 +37,12 @@ class App extends React.Component {
         <Content>
           {children}
         </Content>
-        {!_.isEmpty(intercomSettings)
+        {/* {!_.isEmpty(intercomSettings)
         &&
         <Intercom
           {...intercomSettings}
           appID={intercomSettings.appId}
-        />}
+        />} */}
       </Layout>
     );
   }
@@ -52,7 +52,7 @@ App.propTypes = {
   dispatch: PropTypes.func.isRequired,
   children: PropTypes.element,
   companyId: PropTypes.string.isRequired,
-  intercomSettings: PropTypes.object.isRequired,
+  // intercomSettings: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state, ownProps) {
